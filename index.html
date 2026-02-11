@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Trader Bundle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --pink: #F9B5C4;
+            --pink-light: #FDE4EA;
+            --pink-soft: #FFF0F3;
+            --mint: #A8E6CF;
+            --mint-light: #D4F5E4;
+            --mint-soft: #EDFAF3;
+            --gold: #C5A55A;
+            --gold-light: #D4B96E;
+            --gold-dark: #A8893D;
+            --cream: #FFFDF8;
+            --white: #FFFFFF;
+            --text-dark: #3D3D3D;
+            --text-medium: #6B6B6B;
+            --text-light: #999999;
+            --shadow: 0 8px 35px rgba(197, 165, 90, 0.1);
+            --shadow-hover: 0 16px 50px rgba(197, 165, 90, 0.18);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* ── HERO ── */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--pink-soft);
+            overflow: hidden;
+        }
+
+        .hero-deco { position: absolute; border-radius: 50%; }
+        .deco-1 { top: -60px; right: -60px; width: 260px; height: 260px; background: var(--mint); opacity: 0.25; }
+        .deco-2 { bottom: -80px; left: -80px; width: 300px; height: 300px; background: var(--pink); opacity: 0.25; }
+        .deco-3 { top: 12%; left: 5%; width: 100px; height: 100px; background: var(--gold); opacity: 0.18; }
+        .deco-4 { bottom: 18%; right: 6%; width: 80px; height: 80px; background: var(--mint); opacity: 0.3; }
+        .deco-5 { top: 8%; right: 18%; width: 50px; height: 50px; background: var(--pink); opacity: 0.35; }
+        .deco-6 { bottom: 35%; left: 12%; width: 40px; height: 40px; background: var(--gold-light); opacity: 0.25; }
+        .deco-7 { top: 45%; right: 4%; width: 70px; height: 70px; background: var(--pink-light); opacity: 0.35; }
+        .deco-8 { bottom: 8%; right: 25%; width: 55px; height: 55px; background: var(--mint-light); opacity: 0.4; }
+        .deco-9 { top: 30%; left: 2%; width: 35px; height: 35px; background: var(--pink); opacity: 0.3; }
+        .deco-10 { bottom: 50%; right: 15%; width: 28px; height: 28px; background: var(--gold); opacity: 0.2; }
+        .deco-11 { top: 5%; left: 30%; width: 22px; height: 22px; background: var(--mint); opacity: 0.35; }
+        .deco-12 { bottom: 12%; left: 20%; width: 45px; height: 45px; background: var(--pink); opacity: 0.2; }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 20px;
+            max-width: 900px;
+            animation: fadeUp 1s ease-out;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--mint);
+            color: var(--text-dark);
+            padding: 10px 28px;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 36px;
+            font-weight: 600;
+            border-radius: 50px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            color: var(--text-dark);
+            line-height: 1.08;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-medium);
+            max-width: 580px;
+            margin: 24px auto 40px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            margin: 26px auto;
+            border-radius: 2px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            background: var(--white);
+            padding: 22px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        /* ── SECTIONS ── */
+        section { padding: 100px 20px; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .section-header p {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* ── PRODUCTS ── */
+        .products-section { background: var(--cream); }
+
+        .products-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 28px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .product-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-5px);
+        }
+
+        .card-visual {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .card-visual.ebook { background: var(--gold-light); }
+        .card-visual.notebook { background: var(--pink-light); }
+        .card-visual.planner { background: var(--mint-light); }
+        .card-visual.tshirts { background: var(--pink); }
+        .card-visual.mugs { background: var(--mint); }
+        .card-visual.stickers { background: var(--gold-light); }
+
+        .card-icon { font-size: 4.2rem; line-height: 1; }
+
+        .card-tag {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: var(--white);
+            color: var(--gold-dark);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body { padding: 26px; }
+
+        .card-body h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .card-desc {
+            color: var(--text-medium);
+            font-size: 0.92rem;
+            line-height: 1.65;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .card-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 18px;
+        }
+
+        .feature-tag {
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
+
+        .feature-tag.pink { background: var(--pink-light); color: #b5647a; }
+        .feature-tag.mint { background: var(--mint-light); color: #4a9a6f; }
+        .feature-tag.gold { background: #F5EDD6; color: var(--gold-dark); }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .card-link:hover { gap: 14px; }
+
+        /* ── WHAT'S INSIDE ── */
+        .whats-inside { background: var(--mint-soft); }
+
+        .checklist {
+            max-width: 720px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+            background: var(--white);
+            border-radius: 14px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            font-weight: 400;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+            line-height: 1.6;
+        }
+
+        .check-icon {
+            color: var(--gold);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* ── CTA ── */
+        .cta-section {
+            text-align: center;
+            background: var(--pink-soft);
+            padding: 100px 20px 120px;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 12px;
+        }
+
+        .cta-section p {
+            color: var(--text-medium);
+            font-size: 1.05rem;
+            max-width: 500px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(197, 165, 90, 0.25);
+        }
+
+        .cta-btn:hover {
+            background: var(--gold-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(197, 165, 90, 0.35);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--mint-light);
+            color: var(--text-medium);
+            font-size: 0.85rem;
+        }
+
+        footer span { color: var(--gold-dark); font-weight: 600; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            .hero-stats { gap: 16px; }
+            .stat { padding: 16px 20px; min-width: 100px; }
+            .stat-number { font-size: 1.8rem; }
+            .products-grid { grid-template-columns: 1fr; max-width: 500px; }
+            section { padding: 70px 20px; }
+            .hero-deco { display: none; }
+        }
+
+        /* ── SCROLL ANIMATIONS ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-deco deco-1"></div>
+    <div class="hero-deco deco-2"></div>
+    <div class="hero-deco deco-3"></div>
+    <div class="hero-deco deco-4"></div>
+    <div class="hero-deco deco-5"></div>
+    <div class="hero-deco deco-6"></div>
+    <div class="hero-deco deco-7"></div>
+    <div class="hero-deco deco-8"></div>
+    <div class="hero-deco deco-9"></div>
+    <div class="hero-deco deco-10"></div>
+    <div class="hero-deco deco-11"></div>
+    <div class="hero-deco deco-12"></div>
+    <div class="hero-content">
+        <div class="badge">✨ Complete Trading Kit</div>
+        <h1>The Ultimate<br><span>Trader Bundle</span></h1>
+        <div class="gold-line"></div>
+        <p class="hero-subtitle">
+            Everything you need to master forex trading — from education to execution, wrapped in one premium package.
+        </p>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Products</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">143</div>
+                <div class="stat-label">eBook Pages</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Stickers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">T-Shirt Prints</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+    <div class="section-header reveal">
+        <h2>What's In The Bundle</h2>
+        <div class="gold-line"></div>
+        <p>Six premium products, one unbeatable package</p>
+    </div>
+
+    <div class="products-grid">
+
+        <div class="product-card reveal">
+            <div class="card-visual ebook">
+                <div class="card-icon">📖</div>
+                <div class="card-tag">143 Pages</div>
+            </div>
+            <div class="card-body">
+                <h3>Mastering Forex Trading</h3>
+                <p class="card-desc">The complete guide to professional currency trading — innovative strategies, unique patterns, and real-world examples.</p>
+                <div class="card-features">
+                    <span class="feature-tag gold">12 Chapters</span>
+                    <span class="feature-tag pink">Strategies</span>
+                    <span class="feature-tag mint">Risk Management</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="card-visual notebook">
+                <div class="card-icon">📓</div>
+                <div class="card-tag">52 Pages</div>
+            </div>
+            <div class="card-body">
+                <h3>Trading Journal Notebook</h3>
+                <p class="card-desc">A beautifully designed trading journal with 50 log pages — track every trade, every pair, every lesson.</p>
+                <div class="card-features">
+                    <span class="feature-tag pink">Date & Pair Fields</span>
+                    <span class="feature-tag mint">50 Log Pages</span>
+                    <span class="feature-tag gold">Print-Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="card-visual planner">
+                <div class="card-icon">📊</div>
+                <div class="card-tag">2026</div>
+            </div>
+            <div class="card-body">
+                <h3>Weekly Trading Planner</h3>
+                <p class="card-desc">Set weekly goals, track daily P&L, log your mood and lessons. Includes rules checklists and a weekly summary.</p>
+                <div class="card-features">
+                    <span class="feature-tag mint">Goal Setting</span>
+                    <span class="feature-tag pink">Mood Tracker</span>
+                    <span class="feature-tag gold">Rules Checklist</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="card-visual tshirts">
+                <div class="card-icon">👕</div>
+                <div class="card-tag">50+ Designs</div>
+            </div>
+            <div class="card-body">
+                <h3>Trading T-Shirt Prints</h3>
+                <p class="card-desc">Professional print-ready designs — humor, motivation, gold trading, coffee vibes and more. Ready for Printful, Redbubble or local shops.</p>
+                <div class="card-features">
+                    <span class="feature-tag pink">Humor</span>
+                    <span class="feature-tag gold">XAUUSD</span>
+                    <span class="feature-tag mint">Motivation</span>
+                </div>
+                <a href="https://support-apps.github.io/hadpasa-al-chultsot/" target="_blank" class="card-link">
+                    View All Designs <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="card-visual mugs">
+                <div class="card-icon">☕</div>
+                <div class="card-tag">Print-Ready</div>
+            </div>
+            <div class="card-body">
+                <h3>Trading Mug Prints</h3>
+                <p class="card-desc">Sip your morning coffee from a mug that speaks trader. Perfect designs for mugs, tumblers and drinkware.</p>
+                <div class="card-features">
+                    <span class="feature-tag mint">Mug Designs</span>
+                    <span class="feature-tag gold">Coffee & Trading</span>
+                    <span class="feature-tag pink">High-Res</span>
+                </div>
+                <a href="https://support-apps.github.io/hadpasa-al-kosot/" target="_blank" class="card-link">
+                    View All Designs <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="product-card reveal">
+            <div class="card-visual stickers">
+                <div class="card-icon">🏷️</div>
+                <div class="card-tag">100+ Designs</div>
+            </div>
+            <div class="card-body">
+                <h3>Trading Stickers</h3>
+                <p class="card-desc">100+ professional stickers — candlestick patterns, indicators, humor, motivation, gold trading, coffee vibes and notebook slogans.</p>
+                <div class="card-features">
+                    <span class="feature-tag gold">Patterns</span>
+                    <span class="feature-tag mint">Indicators</span>
+                    <span class="feature-tag pink">100+ Designs</span>
+                </div>
+                <a href="https://support-apps.github.io/madbekot-mischar/" target="_blank" class="card-link">
+                    View All Designs <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="whats-inside">
+    <div class="section-header reveal">
+        <h2>Everything You Get</h2>
+        <div class="gold-line"></div>
+        <p>A complete ecosystem built for serious traders</p>
+    </div>
+
+    <ul class="checklist reveal">
+        <li><span class="check-icon">✦</span> <span><strong>Mastering Forex Trading eBook</strong> — 143-page comprehensive guide with 12 chapters covering strategies, patterns, psychology & risk management</span></li>
+        <li><span class="check-icon">✦</span> <span><strong>Trading Journal Notebook</strong> — 52-page printable journal with date/pair tracking for 50 trades</span></li>
+        <li><span class="check-icon">✦</span> <span><strong>Weekly Trading Planner 2026</strong> — Goal setting, daily P&L tracking, mood logging, rules checklists & weekly summary</span></li>
+        <li><span class="check-icon">✦</span> <span><strong>50+ T-Shirt Print Designs</strong> — Professional print-ready trading designs for Printful, Redbubble, or local print shops</span></li>
+        <li><span class="check-icon">✦</span> <span><strong>Trading Mug Print Designs</strong> — Print-ready designs for mugs, tumblers & drinkware</span></li>
+        <li><span class="check-icon">✦</span> <span><strong>100+ Trading Sticker Designs</strong> — Candlestick patterns, indicators, humor, coffee, gold trading, notebook slogans & more</span></li>
+    </ul>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+    <div class="reveal">
+        <h2>Ready to Trade Smart?</h2>
+        <div class="gold-line"></div>
+        <p>Get the complete trader bundle and elevate every aspect of your trading journey.</p>
+        <p style="margin-bottom:18px;"><span style="font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:800; color:var(--gold);">$9.99</span></p>
+        <a href="https://paypal.me/NairaShop33/9.99" target="_blank" class="cta-btn">GET THE BUNDLE 💰</a>
+        <p style="margin-top:16px; font-size:0.82rem; color:var(--text-light);">Secure payment via PayPal</p>
+        <p style="margin-top:16px; font-size:0.82rem; color:var(--text-light);">Secure payment via PayPal</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>The Ultimate Trader Bundle by <span>Naira</span> — Trade Smart. Stay Disciplined.</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
